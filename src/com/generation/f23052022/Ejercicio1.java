@@ -23,20 +23,20 @@ public class Ejercicio1 {
 		perimetroCirculoR = (2*PI)*radioCirculo; 
 		perimetroCirculoD = (2*PI)*diametroCirculo;
 		
-		System.out.println("***************************");
-		System.out.println("*Calculo area de triangulo*");
-		System.out.println("***************************");
-		System.out.println("");
-		System.out.println("El area de un triangulo de base: " + baseTriangulo + ", y de altura: " + alturaTriangulo + ", es: " + areaTriangulo);
-		System.out.println("");
-		System.out.println("***************************");
-		System.out.println("*Calculo perimetro de un circulo*");
-		System.out.println("***************************");
-		System.out.println("");
-		System.out.println("El perimetro de un circulo de radio: " + radioCirculo + ", es:" + perimetroCirculoR);
-		System.out.println("");
-		System.out.println("El perimetro de un circulo de diametro: " + diametroCirculo + ", es:" + perimetroCirculoD);
-		System.out.println("****************************");
+			System.out.println("***************************");
+			System.out.println("*Calculo area de triangulo*");
+			System.out.println("***************************");
+			System.out.println("");
+			System.out.println("El area de un triangulo de base: " + baseTriangulo + ", y de altura: " + alturaTriangulo + ", es: " + areaTriangulo);
+			System.out.println("");
+			System.out.println("***************************");
+			System.out.println("*Calculo perimetro de un circulo*");
+			System.out.println("***************************");
+			System.out.println("");
+			System.out.println("El perimetro de un circulo de radio: " + radioCirculo + ", es:" + perimetroCirculoR);
+			System.out.println("");
+			System.out.println("El perimetro de un circulo de diametro: " + diametroCirculo + ", es:" + perimetroCirculoD);
+			System.out.println("****************************");
 			}
 
 }
