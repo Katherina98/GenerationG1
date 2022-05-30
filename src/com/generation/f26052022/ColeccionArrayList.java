@@ -91,7 +91,7 @@ public class ColeccionArrayList {
 				Scanner sc = new Scanner(System.in); 
 				
 			//Para agregar datos al Array por medio de la consola. 	
-				for (int i = 0; i < 10; i++) {
+				for (int i = 0; i < 5; i++) {
 					
 				System.out.println("Ingrese un color nro " + (i+1) + ": " );
 				colores.add(sc.nextLine());	
