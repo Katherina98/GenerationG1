@@ -82,7 +82,11 @@ public class Cliente {
 		nombre="cliente1";
 	}
 	
+	public String datos() {
+		return "los datos son los siguientes: " + "\nID = " + this.id + "\nNombre = " + this.nombre + " \nRut = " + this.rut + " \nCorreo = " + this.correo;
+	
 	// para acceder a un atributo privado desde otro lugar debo utilizar el get and set.
 	//Get nos permite consultar por un dato.
 	//Set nos permite definir datos para nuestros atributos.
+}	
 }	

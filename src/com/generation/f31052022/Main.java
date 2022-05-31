@@ -1,25 +1,34 @@
 package com.generation.f31052022;
 
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+
+import com.generation.f31052022.manager.ClienteManager;
 
 public class Main {
 
 	public static void main(String[] args) {
+		//Para poder ingresar datos en la consola.
 		Scanner sc = new Scanner(System.in);
-				
-		//Instanciamos al objeto cliente.
-		//Por default se crea el constructor vacio si es que no se ha creado uno en el objeto.
+		
+		//Arreglo de clientes (lista).
+		List <Cliente> listaClientes = new ArrayList <Cliente>();
+		int opcion = 0;
+		
+		//Instanciamos al objeto cliente, por default se crea el constructor vacio si es que no se ha creado uno en el objeto.
 		//En la clase objeto se debe crear el constructor con parametros si queremos establecerlos.
 		Cliente cliente1 = new Cliente();
 		
+		//Ingreso de datos estaticos
 		//cliente1.setId(1234);
 		//cliente1.setNombre("Ana");		
 		//cliente1.setRut("123456789-0");
 		
-		//Excepciones (cliente con datos dinamicos)
-		
+		do { 
+		//Excepciones, ingreso de datos dinamicos
 		Cliente clienteDatosDinamicos = new Cliente();
 
 		System.out.println("Ingrese el id de Cliente");
@@ -45,7 +54,7 @@ public class Main {
 			
 			//mostrar los datos obtenidos
 			System.out.println("\n******************************");
-			System.out.println("Los datos del cliente son: " + "\nID = " + idString + "\nNombre = " + nombre + "\nRut = " + rut + "\nCorreo = " + correo);
+			System.out.println("Los datos ingresados son: " + "\nID = " + idString + "\nNombre = " + nombre + "\nRut = " + rut + "\nCorreo = " + correo);
 			System.out.println("******************************");
 			
 			//Integer division = 100/0;
@@ -57,9 +66,11 @@ public class Main {
 			
 			Integer division = num1/num2;
 			System.out.println("El resultado de la division es: " + division);
-			System.out.println("Recuerde guardar este numero para su activacion, que tenga buena tarde.");
+			System.out.println("Recuerde guardar este numero para su activacion, que tenga buen dia.");
 			System.out.println("*******************************");
 			
+			
+			//Excepciones, errores que pueden ocurrir y el mensaje que le enviamos al usuario. 
 		} catch (ArithmeticException ae) {
 			System.out.println("Error al dividir por 0");
 		} catch(NullPointerException npe) {
@@ -67,13 +78,28 @@ public class Main {
 		} catch (InputMismatchException ime) {
 			System.out.println("Error en el ingreso de un dato");
 		} catch (NumberFormatException nfe) {
-			System.out.println("No puede ingresar un letra como identificador " + nfe);
+			System.out.println("No puede ingresar un letra como identificador, cliente queda invalido " + nfe);
 		} catch (Exception e) {
 			System.out.println("Ha ocurrido un error, contecte al administrador " + e);
 		}
 		
+		//Agregar el cliente ingresado a la lista.
+		listaClientes.add(clienteDatosDinamicos);
+		
+			do {
+			System.out.println("¿Desea ingresar otro cliente? (1) SI   (2) NO ");
+			opcion = sc.nextInt();
+			} while (opcion <0 || opcion >2);
+		
+		sc.nextLine();
+		} while (opcion == 1);
+	
+		//Acceder al metodo de otra clase para ello debemos crear la instacia. 
+		ClienteManager cm = new ClienteManager ();
+		//con la nueva variable creada llamamos al metodo.
+		cm.recorrerArregloCliente(listaClientes);
+		
+		
 		
 	}
-	
-
 }
