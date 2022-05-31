@@ -3,6 +3,8 @@ package com.generation.f30052022;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.generation.f31052022.Cliente;
+
 public class Main {
 
 	public static void main(String[] args) {
