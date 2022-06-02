@@ -45,10 +45,21 @@ public class CalculadoraTest {
 	@Test
 	public void testNumPar() {
 		Calculadora calc = new Calculadora();
-		String resultado = calc.numPar(100);
+		String resultado = calc.numPar(10);
 		assertEquals("numero par", resultado);
 		assertNotNull(resultado);
 		assertNotEquals(1, resultado);
-
-}
+	}
+	
+	@Test
+	public void testNumImpar() {
+		Calculadora calc = new Calculadora();
+		String resultado = calc.numImpar(10, 3);
+		assertEquals("numero Impar", resultado);
+		assertNotNull(resultado);
+		assertNotEquals(0, resultado);
+	
+	}
+	
+	
 }
