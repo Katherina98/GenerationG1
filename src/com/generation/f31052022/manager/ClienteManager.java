@@ -1,7 +1,6 @@
 package com.generation.f31052022.manager;
 
 import java.util.List;
-
 import com.generation.f31052022.Cliente;
 
 //logica de negocio 
@@ -20,6 +19,7 @@ public class ClienteManager {
 			System.out.println(clientes.datos());
 			System.out.println("********************************");
 			
+		
 		}
 	}
 }
