@@ -1,0 +1,146 @@
+#creacion de base de datos
+CREATE DATABASE nombre_baseDatos ;
+#para ingresar a mysql a través de la terminal
+my sql -u root -p
+enter password: ******
+#**** 
+SHOW VARIABLES LIKE 'validate_password%';
+
+
+#para crear un usuario 1 (usuariolocal)
+CREATE USER 'katherina'@'localhost' IDENTIFIED BY 'Admin1234*';
+GRANT ALL PRIVILEGES ON *.* TO 'katherina'@'localhost' WITH GRANT OPTION;
+#para crear un usuario 2 (acceso remoto)
+CREATE USER 'katherina'@'%' IDENTIFIED BY 'Admin1234';
+GRANT ALL PRIVILEGES ON *.* TO 'katherina'@'%' WITH GRANT OPTION;
+#asignacion de privilegios
+FLUSH PRIVILEGES;
+#para salir de mysql
+exit
+
+
+#para ingresar a mysql con el nuevo usuario creado.
+mysql -u katherina -p
+#para visualizar nuestras bases de datos creadas desde la terminal
+show databases;
+#para cambiarme de base de datos
+use nombre_baseDatos;
+#para visualizar las tablas dentro de mi base de datos
+show tables;
+#crear nuestra tabla
+CREATE TABLE nombre_tabla(
+	nombre_columna1 tipo_dato restriccion, 
+	nombre_columna2 tipo_dato restriccion, 
+	....
+	PRIMARY KEY (nombre_columna1)
+)
+//si no ingresamos una restriccion por default queda null
+//si el dato es varchar se debe establecer el maximo de caracteres en ()
+//en algunos software no acepta el varchar2
+
+CREATE TABLE clientes(
+	id int,
+	nombre varchar(30),
+	apellido varchar(30),
+	correo varchar(50),
+	primary key (id)
+);
+#para visualizar la estructura de nuestra tabla 
+describe nombre_tabla;
+#para consultar la data en la tabla (* selecciona todos los registros)
+select * from nombre_tabla;
+#insercion de registros
+INSERT INTO nombre_tabla (columna1, columna2,... columnaN) VALUES (valor1, valor 2,... valorN);
+
+insert into clientes (id, nombre, apellido, correo) values (1, 'Zoe', 'Morales', 'zoe@morales.cl');
+insert into clientes (id, nombre, apellido, correo) values (2, 'Ana', 'Lopez', 'ana@lopez.cl');
+insert into clientes (id, nombre, apellido, correo) values (3, 'Ivan', 'Fuentes', 'ivan@fuentes.cl');
+insert into clientes (id, correo, nombre, apellido) values (4, 'maria@fuentes.cl','Maria', 'Lagos');
+insert into clientes (id, nombre, apellido) values (8,'Katherina', 'Orellana');
+insert into clientes (id) values (7);
+
+0#Limpiar/vaciar la tabla
+truncate table nombre_tabla;
+#para eliminar la tabla
+drop table nombre_tabla;
+#para eliminar la base de datos
+drop database nombre_baseDatos;
+
+CREATE TABLE clientes(
+	id int primary key not null auto_increment,
+	nombre varchar(30) not null,
+	correo varchar(50),
+	ADD foreign key (direccionesId) references direcciones (id);
+);
+
+//Ingreso información a la nueva tabla
+insert into clientes (nombre, correo) values ('Zoe', 'zoe@morales.cl');
+insert into clientes (nombre, correo) values ('Ana', 'ana@lopez.cl');
+insert into clientes (nombre, correo) values ('Ivan', 'ivan@fuentes.cl');
+insert into clientes (correo, nombre) values ('maria@fuentes.cl','Maria');
+insert into clientes (nombre) values ('Katherina');
+insert into clientes (id, nombre) values (8, 'Mariano');
+insert into clientes (correo) values ('luisa@123.cl');
+
+#para actualizar datos en las columnas
+UPDATE nombre_tabla
+SET columna_modificar = 'valor_a_insertar', columna_modificar2 = 'valor_a_insertar2'
+WHERE condicion  //nos permite filtrar por datos especificos, por eso es recomendable utilizar la primary key
+
+#para modificar registros
+update clientes
+set nombre = 'Katherine', correo = 'katherine@lagos.cl'
+where id = 5;
+
+update clientes
+set correo = 'maria@ramos.cl'
+where id = 4;
+
+#para filtrar un dato en particular agregamos el where y la condicion
+select * from clientes where correo is null;
+select * from clientes where id > 6;
+select * from clientes where id >= 6 and id <8;
+select * from clientes where nombre like '%a%'; //devuelve datos que incluyan la "a" en cualquier lugar de la palabra
+select * from clientes where nombre like 'a%'; //devuelve datos que incluyan la "a" en el inicio de la palabra
+select * from clientes where nombre like '%a';  //devuelve datos que incluyan la "a" en el final de la palabra
+select * from clientes where nombre like '%a%' and correo like '%e%'; //podemos combinar dos filtros
+
+#para filtrar por un dato numerico
+SELECT * FROM nombre_tabla where nombre_columna between valor_1 and valor_2;
+#para ordenar la tabla en orden ascendente o descendiente
+SELECT * FROM nombre_tabla order by nombre_columa asc/ desc;
+
+
+CREATE TABLE direcciones(
+	id int primary key not null auto_increment,
+	nombre varchar(100) not null,
+	numero int not null
+);
+
+#modificar tabla 
+ALTER TABLE nombre_tabla 
+ADD nombre_columna tipo restriccion;
+
+alter table clientes
+add direccionesId int not null;
+
+#para eliminar una columna
+alter table nombre_tabla drop column nombre_columa;
+
+insert into direcciones (nombre, numero) values ('duble', 222);
+insert into direcciones (id, nombre, numero) values (2, 'america', 1114);
+insert into direcciones (id, nombre, numero) values (3, 'mexico', 520);
+
+#para relacionar tablas 
+ALTER TABLE clientes
+ADD foreign key (direccionesId) references direcciones (id);
+
+ALTER TABLE clientes
+ADD CONSTRAINT FK_direccionesId
+ADD foreign key (direccionesId) references direcciones (id);
+
+#nos permite visualizar toda la estructura de la tabla y asignaciones de fk.
+show create table nombre_tabla; 
+
+
+
