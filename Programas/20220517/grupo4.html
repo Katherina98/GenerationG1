@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //Solicitar valor base minimo.
+    var numero = prompt("Ingrese valor base minimo: ");
+    numero = parseInt(numero); //transforma el valor string a numero.
+
+    //Establecer la funcion que retorna valores mayores a variable [numero].  
+    function ValoresMayores(numIn) {
+        //Crear la matriz a recorrer    
+        let matrizUtilizar = [1, 3, 5, 7]; //numeros de ejemplo
+
+        for (let i = numIn; i <= (matrizUtilizar.length - 1); i++) { //para recorrer la matriz
+            if (matrizUtilizar[i] > numero) { //si el valor de [i] es mayor al valor de la variable numero, continuar. 
+                console.log(matrizUtilizar[i]) //si cumple la condicion del if, muestra el valor actual en pantalla. 
+            }
+        }
+
+
+    }
+    console.log(ValoresMayores(0)) //llamado de la funcion con valor inicial 0.
+</script>
+
+
+<body>
+
+</body>
+
+</html>

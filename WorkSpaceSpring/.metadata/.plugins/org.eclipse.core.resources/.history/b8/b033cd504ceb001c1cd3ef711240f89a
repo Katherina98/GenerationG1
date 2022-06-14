@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Katherina Scarlett Orellana Silva</title>
+</head>
+<body>
+ 	<h1>Bienvenido/a <c:out value="${nombres}"></c:out> <c:out value="${apellidos}"></c:out></h1>
+ 	<p>Su edad es <c:out value="${edad}"></c:out> y su generacion es <c:out value="${generacion}"></c:out></p>
+</body>
+</html>

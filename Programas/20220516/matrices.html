@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrices</title>
+    <script>
+        //Matrices o Array o Arreglos
+        //Conjunto de datos ordenados según su ingreso y
+        //separados por coma (, ) La primera posición es la 0. 
+
+        var matriz = [true, false, true];
+        console.log(matriz)
+        console.log(matriz.length); //longitud, tamaño, cantidad de elementos
+
+        console.log(matriz[0]); //imprime el valor [] 
+        console.log(matriz[2]);
+
+        console.log(matriz[0], matriz[2]);
+        console.log(matriz[0] + matriz[2]);
+        console.log(matriz[0] + matriz[1]);
+        console.log(matriz[1] + " " + matriz[2]);
+        console.log(matriz[-1]); //imprime undefined, no existe en el indice
+
+        //si el elemento existe en la posición reemplaza el valor.
+        matriz[2] = 1;
+        console.log(matriz);
+
+        //si el elemento no existe, crea la posición y asigna el valor
+        //el resto de las posiciones quedan como "empty x valor de espacios" (vacios)
+        matriz[5] = "hola"
+
+        console.log(matriz.length);
+        console.log(matriz);
+        //Para acceder de forma rapida al ultimo elemento
+        console.log(matriz[matriz.length - 1]);
+
+        //matriz vacia
+        var numeros = [];
+        //agregar elementos a la matriz vacia
+        numeros[0] = 1;
+        console.log(numeros);
+        //me permite agregar un elemento a la matriz
+        numeros.push(4);
+        numeros.push(10);
+        numeros[10] = 15;
+        numeros.push(9);
+        console.log(numeros);
+        numeros.push(1, 2, 3)
+        console.log(numeros)
+
+        console.log(numeros[numeros.length - 14])
+
+        //eliminar el ultimo elemento
+        numeros.pop();
+        numeros.pop();
+        console.log(numeros);
+
+        // como comparar si esta empty
+        if (numeros[1] == undefined) {
+            console.log("revisar valor 1, espacio vacio");
+        } else {
+            console.log("esta ok, no es undefined")
+        }
+
+        if (numeros[5] == undefined) {
+            console.log("revisar valor 5, espacio vacio");
+        } else {
+            console.log("esta ok, ")
+        }
+
+        var ultimo = numeros.pop();
+        var numerosEliminados = []
+        numerosEliminados.push(ultimo);
+
+        numeros.pop();
+        numeros.pop();
+        console.log(numerosEliminados)
+
+        //agregar un elemento en la posición cero
+        numeros.unshift(13);
+        numeros.unshift("primero");
+        console.log(numeros);
+        //eliminamos el elemento en la posición cero
+        numeros.shift();
+        console.log(numeros);
+
+        //retorna la posición del primer elemento que encuentre ()
+        var posicion = numeros.indexOf(4);
+        console.log("posicion del 4 en el arreglo es", posicion);
+        //en caso de tener valores duplicados, entrega la posición del primer valor. 
+        numeros.push(4);
+        var posicion = numeros.indexOf(4);
+        console.log("posicion del 4 en el arreglo es", posicion);
+        //si no encuentra el valor ingresado retorna -1 
+        //-1 es un valor undefined
+        var posicion = numeros.indexOf(5);
+        console.log(posicion);
+
+        console.log(numeros);
+        //eliminar valores indicando la posicion inicial y luego la cantidad.
+        //splice(posicion, cantidad)
+        numeros.splice(1, 3)
+        console.log(numeros);
+
+        //crear una matriz a partir de otra matriz
+        //le otorga un espacio de memoria independiente de la matriz original.
+        //si modificas la copia no afecta a la original.
+        var nuevaMatriz = numeros.slice();
+        console.log(nuevaMatriz);
+
+        // For: recorrer una matriz e ir de posicion en posicion
+        //consideramos length para contar la longuitud y no pasarnos al recorrer.
+        // si tenemos un length de 4, ya que el index parte de 0 se detiene en la posicion 3. 
+
+        //for (var index = 0; index < nuevaMatriz.length) {        }
+
+        //con esto podemos realizar un contador
+        //index++ ; index+=1 ; index= index + 1;
+
+        //for (var index = 0; index < nuevaMatriz.length; index++) {        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20220517 - FOR</title>
+    <script>
+        var numerosPares = [0, 2, 4, 6, 8, 10, 12];
+        //numeros.Pares.length = 7 //cantidad de elementos
+        console.log(numerosPares)
+
+        // FOR sirve para recorrer una matriz e ir de posicion en posicion
+        //consideramos length para contar la longuitud y no pasarnos al recorrer.
+        // si tenemos un length de 4, ya que el index parte de 0 se detiene en la posicion 3. 
+
+        for (let i = 0; i < numerosPares.length; i++) {
+
+            console.log(numerosPares[i]);
+            console.log("ciclo n°" + (i + 1))
+        }
+
+        console.log("fuera del FOR");
+
+        for (let o = 0; o <= 10; o++) {
+            console.log("2 x", o, "=", o * 2);
+        }
+
+        //con esto podemos realizar un contador [index++ ; index+=1 ; index= index + 1];
+        //for (var index = 0; index < nuevaMatriz.length; index++) {        }
+
+        console.clear() //limpiar consola
+
+        //Ejercicio 1
+        function uno(b) { //b=3, en este caso la funcion no esta haciendo nada.
+            for (var i = 0; i < 10; i++) {
+                console.log(i);
+            } // resultado: 0,1,2,3,4,5,6,7,8,9.
+            return i; //devuelve el ultimo valor de la variable indicada (10).
+        }
+
+        console.log(uno(3)); //llamado a la funcion, es necesario para ejecutar el procedimiento anterior.
+
+        //Ejercio 2
+        function dos() { //definicion de la funcion sin un valor establecido
+            for (var i = 0; i < 10; i++) {
+                i = i + 2; // i = 0 + 2
+                console.log(i);
+            } // resultado: 2,5,8,11
+        }
+
+        dos(); //llamado a la funcion
+
+        //Ejercicio 3
+        function tres(b, c) { //definicion de la funcion (b=0 c=10)
+            for (var i = b; i < c; i++) {
+                console.log(i);
+            }
+            return b * c; //no se hace nada con el retorno
+        } // resultado:  
+        tres(0, 10); //se realiza el llamado a la funcion y se le ingresan los argumentos
+        console.log(tres(0, 10)); //se realiza el segundo llamado a la funcion y se imprimi el return.
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

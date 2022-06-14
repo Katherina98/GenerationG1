@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <script>
+        function sumaPares(numIni, numFin) { //declarar la funcion
+            if (numIni < numFin) { //revisar la condicion
+                //creamos la variable acumuladora (variable que va juntando valores) dentro del if 
+                //ya que si no se cumple la condicion anterior quedara ocupando espacio (sin ejecutar). 
+                let sumaTotalPares = 0 //variable acumuladora
+                for (let i = numIni; i <= numFin; i++) { //
+                    if (i % 2 == 0) { //validar si "i" es par
+                        sumaTotalPares = sumaTotalPares + i; //sumaTotalPares = 0 + 2 = 2, 2 + 4 = 6, 6 + 6 = 12
+
+                    }
+                }
+                return sumaTotalPares;
+            }
+        }
+        console.log(sumaPares(1, 1000)); //imprimir el resultado
+        var sumaTotal = sumaPares(1, 1000); //podemos reutilizar esta variable y realizar operaciones mat.
+
+
+
+        function sumaImpares(numIni, numFin) { //declarar la funcion
+            if (numIni < numFin) { //revisar la condicion
+                //creamos la variable acumuladora (variable que va juntando valores) dentro del if 
+                //ya que si no se cumple la condicion anterior quedara ocupando espacio (sin ejecutar). 
+                let sumaTotalImpares = 0 //variable acumuladora
+                for (let i = numIni; i <= numFin; i++) { //
+                    if (i % 2 != 0) { //validar si "i" es par
+                        sumaTotalImpares = sumaTotalImpares + i; //sumaTotalPares = 0 + 2 = 2, 2 + 4 = 6, 6 + 6 = 12
+
+                    }
+                }
+                return sumaTotalImpares;
+            }
+        }
+        console.log(sumaImpares(1, 9)); //imprimir el resultado
+        var sumaTotal = sumaImpares(1, 9); //podemos reutilizar esta variable y realizar operaciones mat.
+
+
+        //Para imprimir en la consola.
+        var nombre1 = "Katherina";
+        console.log(nombre1);
+        //Para imprimir en la pagina.
+        document.write(nombre1 + "<br>");
+        document.write("hola")
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
