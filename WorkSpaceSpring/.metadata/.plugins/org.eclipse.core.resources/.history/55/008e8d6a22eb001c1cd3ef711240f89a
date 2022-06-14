@@ -1,0 +1,29 @@
+package com.generation.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+//Para establecer nuestra ruta controlador se debe indicar con anotaciones e importar.
+@RestController
+public class IndexController {
+	
+	//http://localhost:8080/ -- Con el / indicamos que es nuestra página por default.
+	//http://localhost:8080/usuario -- Luego del / debemos indicar la ruta, por ejemplo usuario.
+	//@RequestMapping("/usuario")
+	
+	@RequestMapping("/") //Anotacion para capturar las rutas, se debe indicar con anotaciones e importar.
+	public String index() {
+		return "Hola Mundo g1";
+		
+	}
+	/**Enrutamiento*/
+		@RequestMapping("/usuario")
+		public String usuario() {
+			return "Estamos en la URL usuario";
+		}
+	
+	
+	
+	
+}

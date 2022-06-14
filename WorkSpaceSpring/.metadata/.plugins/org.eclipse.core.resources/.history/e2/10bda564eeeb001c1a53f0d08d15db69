@@ -1,0 +1,24 @@
+package com.generation.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/registro") 
+public class RegistroController {
+
+	@RequestMapping("") 
+	public String registro() {
+
+		return "registro.jsp";
+	}
+	
+	//ruta para capturar datos del formulario
+	@RequestMapping("/usuario") 
+	public String registroUsuario() {
+		System.out.println("Estamos en el método de registro usuario");
+		return "registro.jsp";
+	}
+
+
+}
