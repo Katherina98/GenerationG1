@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.generation.models.Usuario;
 
+
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	/**Las interfaces solo definen los métodos, pero no las implementamos*/
