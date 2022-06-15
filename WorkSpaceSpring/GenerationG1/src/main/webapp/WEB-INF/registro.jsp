@@ -27,10 +27,10 @@
 			<form:input type="number" path="edad"/>
 			<br>
 			<br>
-			<!--<form:label path="password">Password:</form:label>
-			<form:input path="password"/>
+			<form:label path="password">Password:</form:label>
+			<form:input type="password" path="password"/>
 			<br>
-			<br>-->
+			<br>
 			<input type="submit" value="Registrar">
 		</form:form>
 	</div>

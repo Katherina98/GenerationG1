@@ -2,6 +2,7 @@ package com.generation.controllers;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,10 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.generation.models.Usuario;
+import com.generation.services.UsuarioService;
 
 @Controller
 @RequestMapping("/registro") 
 public class RegistroController {
+	
+	//inyeccion de dependencia.
+	@Autowired
+	UsuarioService usuarioService;
 
 	//para entregar el objeto usuario vacio al formulario.
 	@RequestMapping("") 
@@ -42,10 +48,15 @@ public class RegistroController {
 		if (resultado.hasErrors()) {
 			model.addAttribute("msgError", "Debe ingresar los datos correctamente");
 			return "registro.jsp";
-		}
+		}else {
 		
-		System.out.println(usuario.getNombre()+" "+usuario.getApellido()+" "+usuario.getEdad());
-		return "index.jsp";
+		System.out.println(usuario.getNombre()+" "+usuario.getApellido()+" "+usuario.getEdad()+" "+usuario.getPassword());
+		
+		//enviar el objeto al servicio
+		usuarioService.saveUsuario(usuario);
+		
+			return "index.jsp";
+		}
 	}
 
 }

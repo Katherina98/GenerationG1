@@ -10,4 +10,6 @@ import com.generation.models.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	/**Las interfaces solo definen los métodos, pero no las implementamos*/
 	/**Querys y usar métodos que se conectan a la base de datos */
+	
+	
 }

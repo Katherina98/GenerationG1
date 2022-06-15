@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Katherina Scarlett Orellana Silva</title>
+<title>Registro de usuario</title>
 </head>
 <body>
  	<h1>Bienvenido/a <c:out value="${nombres}"></c:out> <c:out value="${apellidos}"></c:out></h1>
