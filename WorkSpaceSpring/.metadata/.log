@@ -4624,3 +4624,33 @@ java.lang.Exception: File not found: C:\CursoJava\workSpace\JavaG1\WorkSpaceSpri
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:161)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:255)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:24:52.693
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:24:52.696
+!MESSAGE classpath=66 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:24:52.699
+!MESSAGE buffering callback sts4.classpath.EAZzXRUe Evaluacion1 false 66
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:24:52.699
+!MESSAGE executing callback sts4.classpath.EAZzXRUe 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:24:52.714
+!MESSAGE executing callback sts4.classpath.EAZzXRUe SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:27:28.726
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:27:28.732
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:27:28.736
+!MESSAGE buffering callback sts4.classpath.EAZzXRUe Evaluacion1 false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:27:28.737
+!MESSAGE executing callback sts4.classpath.EAZzXRUe 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 13:27:28.755
+!MESSAGE executing callback sts4.classpath.EAZzXRUe SUCCESS [done]
