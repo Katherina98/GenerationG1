@@ -27,6 +27,10 @@ public class AutoService {
 	public Auto buscarId(Long id) {
 		return autoRepository.findById(id).get(); //.get() especifica el tipo de dato que necesitamos(en este caso sería el objeto Auto con sus atributos)
 	}
+	public void eliminarPorId(Long id) {
+		autoRepository.deleteById(id);
+		
+	}
 	
 	
 }

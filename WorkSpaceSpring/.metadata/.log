@@ -4735,3 +4735,75 @@ java.lang.IllegalArgumentException: can not get a buffer without a document refe
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
 	at org.eclipse.wst.sse.core.indexing.AbstractIndexManager$ResourceEventProcessingJob.run(AbstractIndexManager.java:1567)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:21:39.343
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.EAZzXRUe
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:21:39.345
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.EAZzXRUe
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:21:39.346
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:21:39.346
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.EAZzXRUe => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:40.026
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:40.031
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5cbdf3b[org.springframework.tooling.boot.ls:1.33.0.202204250653(id=569)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:40.037
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.769
+!MESSAGE Boot LS startup time from start to initialized: 2725ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.873
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.nleRPPrOisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.877
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.878
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.879
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.879
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.879
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.nleRPPrO => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.885
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.889
+!MESSAGE buffering callback sts4.classpath.nleRPPrO GenerationG1 false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.890
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.894
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.898
+!MESSAGE buffering callback sts4.classpath.nleRPPrO Evaluacion1 false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.899
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.907
+!MESSAGE classpath=97 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.911
+!MESSAGE buffering callback sts4.classpath.nleRPPrO Marikeiks false 97
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:42.912
+!MESSAGE executing callback sts4.classpath.nleRPPrO 3 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-20 16:33:43.345
+!MESSAGE executing callback sts4.classpath.nleRPPrO SUCCESS [done]

@@ -79,7 +79,6 @@ public class AutoController {
 		Auto auto = autoService.buscarId(id);
 		//Pasar los datos al jsp
 		model.addAttribute("auto", auto);
-		
 		return "editarAuto.jsp";
 	}
 
@@ -91,7 +90,6 @@ public class AutoController {
 		System.out.println("El id al actualizar es: "+id);
 		//agregar el ID al objeto
 	
-		
 		//capturando si existe un error en el ingreso de datos desde el jsp.
 		if (resultado.hasErrors()) {
 			model.addAttribute ("msgIngresoError", "Datos incorrectos, por favor revisar ");
@@ -101,14 +99,17 @@ public class AutoController {
 				System.out.println(auto.getColor()+" "+auto.getMarca()+" "+auto.getModelo()+" "+auto.getVelocidad());	
 				//enviar el objeto al servicio
 				autoService.saveAuto(auto);
-				//obtener una lista de autos
-				List<Auto> listaAutos= autoService.findAll();
-				//pasamos una lista de autos al jsp
-				model.addAttribute("autosCapturados", listaAutos);
-				return "tablaAuto.jsp";
+				return "redirect:/inventario/mostrar";
 		}
 	
 	}
+	
+	@RequestMapping("/eliminar/{id}")
+	public String actualizarAuto(@PathVariable("id") Long id) {
+		autoService.eliminarPorId(id);
+		return "redirect:/inventario/mostrar";
+	}
+	
 	
 	
 	
