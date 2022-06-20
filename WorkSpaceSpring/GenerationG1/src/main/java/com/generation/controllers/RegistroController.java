@@ -1,5 +1,7 @@
 package com.generation.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.generation.models.Auto;
 import com.generation.models.Usuario;
 import com.generation.services.UsuarioService;
 
@@ -55,6 +58,10 @@ public class RegistroController {
 		//enviar el objeto al servicio
 		usuarioService.saveUsuario(usuario);
 		
+		//obtener una lista de usuarios
+		List<Usuario> listaUsuarios= usuarioService.findAll();
+		//pasamos una lista de autos al jsp
+		model.addAttribute("usuariosTabla", listaUsuarios);
 			return "index.jsp";
 		}
 	}

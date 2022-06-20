@@ -1,0 +1,68 @@
+package com.generation.controllers;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+import com.generation.models.Auto;
+import com.generation.services.AutoService;
+
+
+@Controller
+@RequestMapping("/inventario")
+public class AutoController {
+
+	
+	@Autowired
+	AutoService autoService;
+	
+	@RequestMapping("") 
+	public String registro(@ModelAttribute("auto") Auto auto) {
+
+		return "inventario.jsp";
+	}
+	
+
+	//para capturar el objeto con los atributos ya completos.
+	@PostMapping("/auto")
+	public String guardarAuto(@Valid @ModelAttribute("auto") Auto auto,
+			BindingResult resultado, Model model) {
+		
+		
+		//capturando si existe un error en el ingreso de datos desde el jsp.
+		if (resultado.hasErrors()) {
+			model.addAttribute ("msgIngresoError", "Datos incorrectos, por favor revisar ");
+			return "inventario.jsp";
+		} else {
+			
+		System.out.println(auto.getColor()+" "+auto.getMarca()+" "+auto.getModelo()+" "+auto.getVelocidad());	
+			
+		
+		//enviar el objeto al servicio
+				autoService.saveAuto(auto);
+		
+				//obtener una lista de autos
+				List<Auto> listaAutos= autoService.findAll();
+				//pasamos una lista de autos al jsp
+				model.addAttribute("autosCapturados", listaAutos);
+				return "tablaAuto.jsp";
+		
+		}
+	
+	
+	
+	
+	}
+	
+	
+	
+}

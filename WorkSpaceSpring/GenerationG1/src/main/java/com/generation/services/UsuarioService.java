@@ -1,5 +1,7 @@
 package com.generation.services;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +17,13 @@ public class UsuarioService {
 	@Autowired 
 	UsuarioRepository usuarioRepository;
 	
+	//Guardar información ingresada del objeto.
 	public void saveUsuario(Usuario usuario) {
-		usuarioRepository.save(usuario);
-		
-		
+		usuarioRepository.save(usuario);	
+	}
+	//Obtener la lista de los objetos registrados.
+	public List<Usuario> findAll() {
+		return usuarioRepository.findAll();
 	}
 
 }
