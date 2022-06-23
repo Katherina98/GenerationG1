@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api") //Si dejamos la ruta /api fuera de la clase, establecemos la ruta de inicio por defecto.
+@RequestMapping("/api2") //Si dejamos la ruta /api fuera de la clase, establecemos la ruta de inicio por defecto.
 public class ParametrosRestController {
 
 	

@@ -1,9 +1,14 @@
 package com.generation.models;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -27,6 +32,13 @@ public class Auto {
 	private String modelo;
 	
 	private Double velocidad;
+	
+	
+		//Atributos opcionales que sirven para la gestión de la base de datos.
+		@Column(updatable=false)
+		private Date createdAt;
+
+		private Date updatedAt;
 	
 	
 	public Auto() {
@@ -98,7 +110,15 @@ public class Auto {
 		return "Auto [color=" + color + ", marca=" + marca + ", modelo=" + modelo + ", velocidad=" + velocidad + "]";
 	}
 	
-	
+	//Insertar en la base de datos la fecha antes de insertar.
+		@PrePersist
+	    protected void onCreate(){
+	        this.createdAt = new Date();
+	    }
+	    @PreUpdate
+	    protected void onUpdate(){
+	        this.updatedAt = new Date();
+	    }
 	
 	
 	

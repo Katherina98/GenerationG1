@@ -19,7 +19,7 @@ public class AutoService {
 	public void saveAuto(Auto auto) {
 		autoRepository.save(auto);
 	}
-	//Obtener la lista de los objetos registrados.
+	// Obtener la lista de los objetos registrados. 
 	public List<Auto> findAll() {
 		return autoRepository.findAll();
 	}
