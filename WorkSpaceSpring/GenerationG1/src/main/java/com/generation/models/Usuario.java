@@ -2,11 +2,14 @@ package com.generation.models;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -38,8 +41,13 @@ public class Usuario {
 	//Atributos opcionales que sirven para la gestión de la base de datos.
 	@Column(updatable=false)
 	private Date createdAt;
-
+	//Guarda automaticamente la fecha en que fue actualizado el registro.
 	private Date updatedAt;
+	
+	 //Relaciones OneToOne (1a1)   
+	 //Con cascade podemos restringir el eliminar datos y dejar relaciones incompletas. Solo puedo eliminar datos cuando rompo la relación.
+	 @OneToOne(mappedBy="usuario",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	 private Licencia licencia;
 	
 	//Constructores
 	public Usuario() {
@@ -55,6 +63,14 @@ public class Usuario {
 
 	}
 	//Getters&Setters
+	public Licencia getLicencia() {
+		return licencia;
+	}
+
+	public void setLicencia(Licencia licencia) {
+		this.licencia = licencia;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -112,4 +128,5 @@ public class Usuario {
 	    }
 	
 	
+	    
 }
