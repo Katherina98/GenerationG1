@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio</title>
+    <script>
+        var nota1 = prompt("Ingrese nota 1");
+        nota1 = parseInt(nota1);
+        var nota2 = prompt("Ingrese nota 2");
+        nota2 = parseInt(nota2);
+        var nota3 = prompt("Ingrese nota 3");
+        nota3 = parseInt(nota3);
+        var nota4 = prompt("Ingrese nota 4");
+        nota4 = parseInt(nota4);
+        var nota5 = prompt("Ingrese nota 5");
+        nota5 = parseInt(nota5);
+        var nota6 = prompt("Ingrese nota 6");
+        nota6 = parseInt(nota6);
+
+        function sumNotas() {
+            var totalSuma = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6)
+            console.log("La suma total es: " + totalSuma);
+        }
+
+        function promNotas() {
+            var totalPromedio = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6) / 6
+            if (totalPromedio >= 70 && totalPromedio <= 100) {
+                console.log("El promedio del alumno es: " + totalPromedio + " y se encuentra aprobado");
+            }
+            if (totalPromedio >= 0 && totalPromedio < 70) {
+                console.log("El promedio del alumno es: " + totalPromedio + " y se encuentra reprobado");
+            }
+
+        }
+
+
+        sumNotas();
+        promNotas();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
