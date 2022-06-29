@@ -1,6 +1,9 @@
 package com.generation.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.generation.models.Auto;
@@ -8,6 +11,23 @@ import com.generation.models.Auto;
 @Repository
 public interface AutoRepository extends JpaRepository<Auto, Long>{
 
+	//JPQL
+	//Usamos el objeto
+	@Query("SELECT a FROM Auto a WHERE a.marca = ?1 ")
+	List<Auto> findAllAutoMarca(String marca);
+	//List <Auto> getAutoByMarca o getAutoWhereMarca
+	
+	//Query comun
+	@Query(value="SELECT * FROM autos a WHERE a.marca = ?1",nativeQuery = true)
+	List<Auto> buscarMarca(String marca);
+
+	//Filtro por algunas columnas de la tabla, en este caso retorna un objeto. Este tipo de query es generica, no nos permite traer objetos relacionados (solo el dato en especifico)
+	@Query(value="SELECT a.marca, a.color FROM autos a WHERE a.marca = ?1 and a.color=?2",nativeQuery = true)
+	List<Object[]> buscarMarcaColor(String marca, String color);
+
+	//INNER JOIN
+	@Query("SELECT a FROM Auto a JOIN a.comprasVentas cv")
+	List<Auto> buscarAutosVendidos();
 	
 	
 }

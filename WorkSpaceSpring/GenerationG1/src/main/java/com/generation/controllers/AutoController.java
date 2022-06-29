@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.generation.models.Auto;
 import com.generation.services.AutoService;
@@ -111,6 +112,31 @@ public class AutoController {
 	}
 	
 	
+	@PostMapping("/buscar")
+	public String buscar(@RequestParam(value="marca") String marca, Model model) {
+		
+		if(marca.equals("")) {
+			return "redirect:/inventario/mostrar";
+		}
+		
+		List<Auto> listaAutos = autoService.buscarMarca(marca);
+		if(listaAutos.size() < 1) {
+		model.addAttribute ("msgError", "Marca no encontrada");	
+		return "tablaAuto.jsp";
+		}
+		model.addAttribute("autosCapturados", listaAutos);
+		return "tablaAuto.jsp";
+	}
 	
+	@RequestMapping("/pagina/{numeroPagina}")
+	public String paginarAuto(@PathVariable("numeroPagina") int numeroPagina, Model model) {
+		//Los iterables siempre empiezan con el indice 0.
+		Page<Auto> listaAutos = autoService.paginarAutos(numeroPagina - 1);
+		model.addAttribute("autosCapturados", listaAutos);
+		//Total Pages = total de elementos / LOTE.
+		model.addAttribute("totalPaginas", listaAutos.getTotalPages());
+		
+		return "autosPaginados.jsp";
+	}
 	
 }

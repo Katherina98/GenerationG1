@@ -20,6 +20,18 @@
 <h1> <p class="text-secondary" align="center">Registros de autos</p> </h1>
 <br>
 <div class= "container">
+	<!-- FORMULARIO DE BUSQUEDA -->
+	<c:if test="${msgError!= null}">
+ 		<div class="alert alert-warning" role="alert"><c:out value="${msgError}"></c:out></div>
+ 		</c:if>
+		<form action="/inventario/buscar" method="post">
+			<label for="marca">Marca:</label>
+			<input type="text" id="marca" name="marca">
+			<input type="submit" class="btn btn-primary" value="Buscar">
+		</form>
+		<br>
+	
+	<!-- TABLA -->
 	<table class="table">
 	<thead>
    	 <tr>
