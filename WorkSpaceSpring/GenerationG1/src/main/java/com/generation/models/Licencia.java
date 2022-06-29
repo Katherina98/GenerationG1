@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table (name="licencias")
+@Table(name="licencias")
 public class Licencia {
 
 	@Id

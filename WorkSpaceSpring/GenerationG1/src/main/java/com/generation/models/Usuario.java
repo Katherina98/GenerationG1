@@ -1,6 +1,7 @@
 package com.generation.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -48,7 +52,17 @@ public class Usuario {
 	 //Con cascade podemos restringir el eliminar datos y dejar relaciones incompletas. Solo puedo eliminar datos cuando rompo la relación.
 	 @OneToOne(mappedBy="usuario",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	 private Licencia licencia;
-	
+
+	 //ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(
+				name="roles_usuarios", //Nombre de la tabla relacional (conexión entre tablas)
+				joinColumns= @JoinColumn(name="usuario_id"), //Primary Key de donde estamos actualmente
+				inverseJoinColumns= @JoinColumn(name="rol_id") //Primary Key de la otra tabla a asociar
+				)
+	private List<Rol> roles;
+
+	 
 	//Constructores
 	public Usuario() {
 		super();
@@ -63,8 +77,17 @@ public class Usuario {
 
 	}
 	//Getters&Setters
+	
 	public Licencia getLicencia() {
 		return licencia;
+	}
+
+	public List<Rol> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Rol> roles) {
+		this.roles = roles;
 	}
 
 	public void setLicencia(Licencia licencia) {

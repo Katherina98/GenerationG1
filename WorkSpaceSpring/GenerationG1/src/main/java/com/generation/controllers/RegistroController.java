@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.generation.models.Auto;
 import com.generation.models.Usuario;
 import com.generation.services.UsuarioService;
 
 @Controller
 @RequestMapping("/registro") 
 public class RegistroController {
-	
+
 	//inyeccion de dependencia.
 	@Autowired
 	UsuarioService usuarioService;

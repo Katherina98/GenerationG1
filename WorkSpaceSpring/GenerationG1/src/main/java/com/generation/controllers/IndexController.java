@@ -30,6 +30,6 @@ public class IndexController {
 		
 		
 		return "index.jsp";
+	
 	}
-		
 }
