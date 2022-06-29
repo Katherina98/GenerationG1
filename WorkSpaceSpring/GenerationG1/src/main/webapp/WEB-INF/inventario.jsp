@@ -36,8 +36,11 @@
 			<form:label path="velocidad" class="form-label">Velocidad:</form:label>
 			<form:input type="number" path="velocidad" class="form-control"/>
 			<br>
-			<button type="submit" class="btn btn-outline-primary">Registrar
+			<button type="submit" class="btn btn-outline-primary">Registrar</button>
 		</form:form>
+		<br>
+		<a href="/inventario/mostrar">Ver tabla de autos</a>
+
 	</div>
-</body>
+	</body>		
 </html>

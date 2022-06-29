@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos HTML</title>
+</head>
+
+<body>
+    <h1> Titulo </h1>
+    <h2> Titulo </h2>
+    <h3> Titulo </h3>
+    <h4> Titulo </h4>
+    <h5> Titulo </h5>
+    <h6> Titulo </h6>
+    <br>
+    <hr>
+    <p>
+        <b>Parrafo:</b> <i>se utiliza para trabajar con mucho texto,</i> <u>es ajustable</u>
+    </p>
+    <br>
+    <hr>
+
+    <img src="assets/img/imagen2.png" alt="Gato" width="100" height="83">
+    <p>
+        <i>Un gato durmiendo tiene un sueño que oscila entre un ligero sopor y un sueño profundo.</i>
+    </p>
+    <br>
+    <hr>
+    <!-- imagenes -->
+    <img src="" alt="imagen rota">
+    <img src="assets/img/53j.png" alt="imagen2" width="100">
+    <br>
+    <hr>
+    <!-- Link o hipervinculos-->
+    <!--URL valor absoluto, nos redirige a otra página-->
+    <a href="https://www.generation.org/" target="_blank">Visitar Generation</a>
+    <br>
+    <!--URL valor relativo, nos permite movernos dentro de la misma web-->
+    <a href="pagina2.html">Ir a pagina 2</a>
+    <br>
+    <!--URL valor de anclaje, nos permite movernos dentro de la misma página-->
+    <a href="#">Ir a sección dentro de la misma pagina</a>
+    <br>
+    <!--REEMPLAZAR el texto por una imagen-->
+    <a href="https://www.generation.org/" target="_blank">
+        <img src="assets/img/imagen3.png" alt="imagen3" width="100">
+    </a>
+    <br>
+    <hr>
+    <!--LISTAS ORDENADAS -->
+    <ol>
+        <li>Grupo 1</li>
+        <li>Grupo 2</li>
+        <li>Grupo 3</li>
+        <li>Grupo 4</li>
+        <li>Grupo 5</li>
+        <li>Grupo 6</li>
+        <li>Grupo 7
+            <ol>
+                <li>Grupo 7.1</li>
+                <li>Grupo 7.2</li>
+            </ol>
+        </li>
+    </ol>
+    <!--LISTA NO ORDENADA-->
+    <ul>
+        <li>Grupo 1</li>
+        <li>Grupo 2</li>
+        <li>Grupo 3</li>
+        <li>Grupo 4</li>
+        <li>Grupo 5</li>
+        <li>Grupo 6</li>
+        <li>Grupo 7
+            <ul>
+                <li>Grupo 7.1</li>
+                <li>Otros
+                    <ul>
+                        <li><a href="#Menu">Menu</a></li>
+                    </ul>
+                </li>
+                <li>Grupo 7.2</li>
+            </ul>
+    </ul>
+    <!-- PARA RECORRER DE FORMA DINAMICA
+    <ul>
+        <c:forEach items="${lista}" var="item">
+            <li>${item}</li>
+        </c:forEach>
+    </ul>-->
+    <br>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Registro 1</td>
+                <td>Registro 2</td>
+                <td>Registro 3</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Registro 4</td>
+                <td>Registro 5</td>
+                <td>Registro 6</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>

@@ -30,6 +30,8 @@
 			<input type="submit" class="btn btn-primary" value="Buscar">
 		</form>
 		<br>
+		<!-- ACCESO DIRECTO MEDIANTE HIPERVINCULO PARA CREACION DE AUTO -->
+		<a href="/inventario">Crear nuevo auto</a>
 	
 	<!-- TABLA -->
 	<table class="table">
