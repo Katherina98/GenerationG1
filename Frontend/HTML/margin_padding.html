@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Padding</title>
+
+    <style>
+        /*MARGIN*/
+        
+        #padre {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px auto;
+            /*El margin como efecto optico provoca un desplazamiento pero realmente el elemento esta creciendo*/
+            /*Cuando agregamos 2 valores el margen es el primer valor arriba/abajo y el segundo izquierda/derecha.
+            En caso de utilizar 3 valores el orden es: arriba->derecha/izquierda->abajo y con 4 valores es
+            arriba->derecha->abajo->izquierda (orden horario)*/
+            /*Con auto podemos realizar ajustes automaticos agregando un valor para arriba/abajo y centrarse de izquierda/derecha*/
+            border: 10px solid black;
+            /*Cuando agregamos un border fijamos al "padre" por lo que el "hijo" se desplaza (crece) independientemente*/
+            padding-left: 20px;
+        }
+        
+        #hijo {
+            width: 40px;
+            height: 40px;
+            background-color: blueviolet;
+            /*margin: 1px;*/
+            display: inline-block;
+            /*Nos permite ubicar elementos de bloque, uno al lado del otro. Debe estar especificado en los elementos que quedaran al lado*/
+        }
+        /*PADDING*/
+        /*Efecto  optico de desplazamiento, va creciendo internamente*/
+        
+        #hijo2 {
+            width: 40px;
+            height: 40px;
+            background-color: aqua;
+            display: inline-block;
+        }
+        /*Elementos inline: <a><img><input><label><select><textarea>*/
+        /*Elementos block: <body><div><form><h1>-<h6><p><table><ul><ol><li>*/
+        /*NUNCA COLOCAR ELEMENTOS DE BLOQUE DENTRO DE UN INLINE*/
+        
+        a {
+            display: block;
+            background-color: darkblue;
+            color: azure;
+        }
+        /*Los elementos inline se comporta como un elemento de tipo block*/
+        
+        p {
+            display: inline;
+        }
+        /*Inline: Permite visualizar un bloque  como tipo inline (no tiene propiedad de bloque, pierde su margen y espacio) le quitamos toda propiedad de separacion*/
+        /*Inline-block: Permite visualizar el objeto como un bloque pero en la misma linea, sin realizar el salto de linea*/
+        
+        #default1 {
+            width: 50px;
+            height: 100px;
+            background-color: brown;
+            display: inline-block;
+            /*vertical-align: default;*/
+        }
+        
+        #default2 {
+            width: 50px;
+            height: 200px;
+            background-color: greenyellow;
+            display: inline-block;
+            /*vertical-align: default;*/
+        }
+        /*Por default nuestros elementos se encuentran alineados según el bottom, es recomendable a veces colocarlo para asegurarse*/
+        
+        #top1 {
+            width: 50px;
+            height: 100px;
+            background-color: brown;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #top2 {
+            width: 50px;
+            height: 200px;
+            background-color: greenyellow;
+            display: inline-block;
+            vertical-align: top;
+        }
+        /*Con vertical-align: top; podemos especificar la alineación de los elementos por la parte superior*/
+        
+        #middle1 {
+            width: 50px;
+            height: 100px;
+            background-color: brown;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        #middle2 {
+            width: 50px;
+            height: 200px;
+            background-color: greenyellow;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        /*Con vertical-align: middle; podemos especificar la alineación de los elementos por la parte central)*/
+    </style>
+
+</head>
+
+<body>
+    <div id="padre">
+        <div id="hijo"></div>
+        <div id="hijo2"></div>
+    </div>
+    <a href="#grupo1">Grupo 1</a>
+    <a href="#grupo2">Grupo 2</a>
+    <a href="#grupo3">Grupo 3</a>
+    <a href="#grupo4">Grupo 4</a>
+    <a href="#grupo5">Grupo 5</a>
+    <a href="#grupo6">Grupo 6</a>
+
+    <p>Parrafo texto 1</p>
+    <p>Parrafo texto 2</p>
+
+    <!--ALINEACION POR DEFAULT-->
+    <div>
+        <div id="default1"></div>
+        <div id="default2"></div>
+    </div>
+    <br>
+    <hr>
+    <!--ALINEACION VERTICAL SUPERIOR-->
+    <div>
+        <div id="top1"></div>
+        <div id="top2"></div>
+    </div>
+    <br>
+    <hr>
+    <!--ALINEACION VERTICAL CENTRAL-->
+    <div>
+        <div id="middle1"></div>
+        <div id="middle2"></div>
+    </div>
+    <!--Investigar MEDIA QUERY, como trabajar los elementos para que sean responsive-->
+
+</body>
+
+</html>

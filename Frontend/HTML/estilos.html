@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <style>
+        /* 3 formas básicas de asignar un estilo*/
+        /* 1. Por elemento HTML, todas las etiquetas con el mismo nombre se ven afectadas */
+        /*Cuando le establecemos un width al div, lo dejamos estatico (no responsive)*/
+        /*El porcentaje se utiliza para trabajar con responsive*/
+        /*Cuando trabajamos con %, nuestra referencia es la página o el conteneder*/
+        
+        div {
+            background-color: pink;
+            width: 50%;
+        }
+        
+        p {
+            background-color: whitesmoke;
+            color: firebrick;
+        }
+        /*Otras unidades de medida: EM = 16px Y REM= 16px (no es escalable)*/
+        
+        img {
+            width: 100px;
+        }
+        /*2. Por clase, se veran afectadas las etiquetas que tengan el nombre de la clase*/
+        /*Puede ser cualquier etiqueta mientras este dentro de la clase, es decir img, p, h, div, etc*/
+        /*Si colocamos la clase en el div, se produce una herencia a los elementos dentro de este sector*/
+        /*En caso de tener un estilo de elemento y clase, se prioriza el que este mas cerca del elemento como tal*/
+        
+        .parrafos {
+            color: brown;
+            background-color: antiquewhite;
+        }
+        
+        .generation1 {
+            color: blueviolet;
+        }
+        /*3. Por ID, estilo especifico para la etiqueta (este ID debe ser unico por etiqueta) */
+        /*!important es para establecer prioridad sobre el resto de estilos*/
+        
+        #importante {
+            color: blue;
+        }
+        
+        #pg1 {
+            color: deeppink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+
+        <p class="parrafos">Parrafo 1</p>
+        <p class="parrafos">Parrafo 2</p>
+        <p>Parrafo 3</p>
+        <p id="importante">Parrafo 4</p>
+        <img src="assets/img/53j.png" alt="front">
+    </div>
+    <div class="parrafos">
+        <h6>Hola</h6>
+        <p>Parrafo 5</p>
+    </div>
+    <p id="pg1" class="generation1"> Parrafo 6</p>
+
+</body>
+
+</html>

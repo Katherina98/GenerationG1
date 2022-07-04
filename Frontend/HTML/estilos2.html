@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de estilo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        p {
+            width: 390px;
+            /*ancho*/
+            height: 60px;
+            /*alto*/
+            font-family: 'Lucida Sans';
+            font-style: italic;
+            font-size: 1em;
+            line-height: 0.6cm;
+        }
+        
+        div {
+            width: 400px;
+            height: 400px;
+            overflow: scroll;
+            /*agregar barra de desplazamiento*/
+            background: url("assets/img/imagen2.png") no-repeat center;
+            /*no-repeat nos deja solo una imagen*/
+            background-color: azure;
+            background-size: 50%;
+            border: 10px solid aquamarine;
+            border-top-color: aqua;
+            border-bottom-color: aqua;
+            border-radius: 20px;
+            /*dotter nos permite agregar puntitos en el borde, solid es una linea*/
+        }
+        /*HEXADECIMAL(base16): 0123456789ABCDEF
+        Para trabajar con hexadecimal debemos colocar un (#) 
+        #12 34 56 ROJO VERDE AZUL RGB(RED,GREEN,BLUE)
+        */
+        
+        a {
+            text-decoration: none;
+            font-weight: 900;
+            /*Grosor de la letra, va de 100 en 100 hasta el 900 (no hay medios)*/
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        /*ELEMENTOS DE POSICION: static, relative, fixed, absolute, sticky...*/
+        
+        .estatico {
+            width: 400px;
+            height: 50px;
+            position: static;
+            /*posición original (no hace nada)*/
+        }
+        
+        .relativo {
+            width: 400px;
+            height: 50px;
+            position: relative;
+            left: 100px;
+            top: 10px;
+            /*Se desplaza según indiquemos left, rigth, top, bottom y respeta el ultimo elemento*/
+        }
+        
+        .fijo {
+            width: 400px;
+            height: 50px;
+            top: 0px;
+            right: 50px;
+            left: 50;
+            position: fixed;
+            /*Se desplaza según indiquemos left, rigth, top, bottom y pasando por otros elementos (se guia por la pagina) */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Neko</h1>
+        <p>Los gatos domésticos, sea cual sea su raza, son todos miembros de una misma especie, Felis silvestris catus, que mantiene una relación con los humanos desde hace mucho tiempo. </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="#">Link de prueba</a>
+    </div>
+    <div class="estatico">
+        <p>Este es un texto con posicionamiento static</p>
+    </div>
+
+    <div class="relativo">
+        <p>Este es un texto con posicionamiento relative</p>
+    </div>
+
+    <div class="fijo">
+        <p>Este es un texto con posicionamiento fijo</p>
+    </div>
+
+</body>
+
+</html>

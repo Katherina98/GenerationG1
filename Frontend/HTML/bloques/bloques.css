@@ -1,0 +1,64 @@
+/*CSS reset settings here*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper {
+    width: 950px;
+    background-color: grey;
+    margin: 0px auto;
+    border: solid gray;
+    padding-bottom: 10px;
+    /*Para agrandar el elemento hacia abajo*/
+}
+
+#header {
+    min-height: 150px;
+    background-color: purple;
+    margin: 12px;
+    /*Para "desplazar" el elemento (crecen todos sus lados en el mismo valor)*/
+}
+
+#navigation {
+    min-height: 300px;
+    width: 200px;
+    background-color: pink;
+    margin-left: 10px;
+    /*para transformar el elemento a inline-block y poder colocarlo al lado de otro, en la misma linea*/
+    display: inline-block;
+    /*alinear los elementos que van lado a lado desde la parte superior*/
+    vertical-align: top;
+}
+
+#main_content {
+    min-height: 400px;
+    width: 700px;
+    background-color: blue;
+    /*para transformar el elemento a inline-block y poder colocarlo al lado de otro, en la misma linea*/
+    display: inline-block;
+    /*alinear los elementos que van lado a lado desde la parte superior*/
+    vertical-align: top;
+    margin-left: 20px;
+    /*para separar la figura azul de la rosada*/
+    padding-left: 5px;
+}
+
+.subcontents {
+    min-height: 150px;
+    width: 150px;
+    background-color: yellow;
+    /*para transformar el elemento a inline-block y poder colocarlo al lado de otro, en la misma linea*/
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 27px;
+}
+
+#advertisement {
+    min-height: 110px;
+    width: 640px;
+    background-color: green;
+    margin: 15px;
+}

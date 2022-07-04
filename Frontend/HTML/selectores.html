@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 2</title>
+</head>
+
+<body>
+    <h1>Estoy en la pagina 2</h1>
+    <a href="index.html">Volver a la pagina principal</a>
+    <br>
+    <br>
+    <!--INPUT TYPE RADIO-->
+    <!--Name= se utiliza para agrupar (debe ser iguales)-->
+    <!--Value= es el valor que obtendra nuestra selección y sera llevado al backend-->
+    <!--ID= debe ser único por cada elemento-->
+    <h2>Seleccione una opción:</h2>
+    <input type="radio" name="opcion" id="html" value="html"><label for="html">HTML</label><br>
+    <input type="radio" name="opcion" id="css" value="css">CSS<br>
+    <input type="radio" name="opcion" id="js" value="js">JavaScript<br>
+    <br>
+    <hr>
+    <!--INPUT TYPE CHECKBOX-->
+    <!-- url?opciones1=html&opciones2=css-->
+    <!--Cuando en el label indicamos el for="" debemos colocar el valor del ID-->
+    <!--Label sirve para asociar el texto al input ingresado-->
+    <h2>Seleccione las opciones que quiera:</h2>
+    <input type="checkbox" name="opciones1" id="opciones1" value="html"><label for="opciones1">HTML</label><br>
+    <input type="checkbox" name="opciones2" id="opciones2" value="css"><label for="opciones2">CSS</label><br>
+    <input type="checkbox" name="opciones3" id="opciones3" value="js"><label for="opciones3">JavaScript</label><br>
+    <br>
+    <hr>
+    <!--SELECT-->
+    <!--En el backend veriamos: lenguaje = 1 (es decir seleccionamos la opción de Java)-->
+    <!--Con selected podemos establecer un valor fijo en el visor(por default)-->
+    <!--En caso de que el valor 0 sea utilizado podemos establecer nuestro default o en el -1-->
+    <h2>Seleccione una opción:</h2>
+    <select id="lenguaje" name="lenguaje">
+        <option value="0" selected>Seleccione un lenguaje</option>
+        <option value="1">Java</option>
+        <option value="2">JavaScript</option>
+        <option value="3">Python</option>
+        <option value="4">C#</option>
+    </select>
+    <!--SELECT MULTIPLE-->
+    <!--Con multiple podemos seleccionar varias opciones de la lista desplegada manteniendo presionado control-->
+    <h2>Seleccione las opciones que quiera:</h2>
+    <select id="lenguaje" name="lenguaje" multiple>
+        <option value="0" selected>Seleccione un lenguaje</option>
+        <option value="1">Java</option>
+        <option value="2">JavaScript</option>
+        <option value="3">Python</option>
+        <option value="4">C#</option>
+    </select>
+    <br>
+    <hr>
+
+
+
+</body>
+
+</html>
