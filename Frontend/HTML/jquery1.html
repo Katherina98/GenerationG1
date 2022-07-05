@@ -84,42 +84,158 @@
 
             //-------------------------------------------------------------------------------------------------------//
 
+            //Manipulación de elementos HTML: crear o eliminar elementos HTML de forma dinamica.
 
+            //after: crea un elemento HTML despues del elemento que tengamos antes del boton, podemos agregar mas de 1 elemento.
+            $('#btn11').click(function() {
+                $('#p5').after('<h2> titulo h2 after </h2>'); //crea el primer elemento.
+                $('#p5').after('<img src="" alt="after">'); //crea el segundo elemento sobre el primero.
+            });
+
+            //before: crea un elemento HTML arriba del elemento que tengamos antes del boton, podemos agregar mas de 1 elemento.
+            $('#btn12').click(function() {
+                $('#p5').before('<h2> titulo h2 before </h2>'); //crea el primer elemento.
+                $('#p5').before('<img src="" alt="before">'); //crea el segundo elemento abajo del primero.
+            });
+
+            //append: agrega entre la etiqueta al final.
+            $('#btn13').click(function() {
+                $('#p5').append('<span> esto es span </span>'); //se agrega un elemento inline en un bloque (al final)
+            });
+            //prepend: agrega entre la etiqueta al principio.
+            $('#btn14').click(function() {
+                $('#p5').prepend('<span> esto es span </span>'); //se agrega un elemento inline en un bloque (al inicio)
+            });
+
+            //-------------------------------------------------------------------------------------------------------//
+
+            //attr: agregar un atributo a un elemento HTML.
+            $('#btn15').click(function() {
+                $('#p6').attr('name', 'parrafo6');
+                $('#p6').attr('style', 'color:pink;font-size:20px');
+                $('#txt1').attr('value', 'Generation1');
+
+            });
+
+            //html: crear un elemento HTML pero, borra todo lo anterior (reemplaza o limpia).
+            $('#btn16').click(function() {
+                $('#p7').html('<span> etiqueta span </span>');
+            });
+
+            //val -> obtener el valor de un elemento html
+            $('#btn17').click(function() {
+                let valor = $('#txt2').val(); //capturar el valor del elemento
+                alert(valor);
+            });
+
+            //Manipulación de estilo
+            //css -> agregar un estilo a un elemento html.
+            $('#btn18').click(function() {
+                $('#div1').append('<p id="p9">soy el segundo parrafo</p>');
+                $('#p9').css("color", "gray");
+                $('#p9').css("background-color", "aqua");
+                $('#p9').css("font-size", "15px");
+            });
+
+            //AddClass: agrega la clase especificada en el () al elemento.
+            $('#btn19').click(function() {
+                $('#div1').addClass('divColor')
+                $('#div1').addClass('div1')
+
+            });
+
+            //RemoveClass: quita del elemento todas las clases o la especificada en el ().
+            $('#btn20').click(function() {
+                $('#div1').removeClass('divColor')
+
+            });
 
             //fin jquery    
         });
     </script>
 
+    <style>
+        .divColor {
+            width: 400px;
+            height: 200px;
+            background-color: cornflowerblue;
+        }
+    </style>
+
 </head>
 
 <body>
-    <!--Obtener un elemento y modificarlo-->
-    <h1>Getter - Setter</h1>
-    <p id="p1">Esto es un parrafo 1</p>
-    <button id="btn1" class="btn btn-outline-info">Get y Set</button>
-    <br>
-    <hr>
+    <div class="container">
+        <!--Obtener un elemento y modificarlo-->
+        <h1>Getter - Setter</h1>
+        <p id="p1">Esto es un parrafo 1</p>
+        <button id="btn1" class="btn btn-outline-info">Get y Set</button>
+        <br>
+        <hr>
 
-    <!--Efectos: Ocultar y mostrar un elemento-->
+        <!--Efectos: Ocultar y mostrar un elemento-->
 
-    <!--Forma 1-->
-    <h1>Hide - Show - Toggle</h1>
-    <p id="p2">Esto es un parrafo 2</p>
-    <button id="btn2" class="btn btn-outline-info">Hide()</button>
-    <button id="btn3" class="btn btn-outline-info">Show()</button>
-    <button id="btn4" class="btn btn-outline-info">Toggle()</button>
-    <br>
-    <hr>
-    <!--Forma 2 -->
-    <h1>FadeIn - FadeOut - FadeToggle</h1>
-    <p id="p4">Esto es un parrafo 4</p>
-    <button id="btn8" class="btn btn-outline-info">FadeOut()</button>
-    <button id="btn9" class="btn btn-outline-info">FadeIn()</button>
-    <button id="btn10" class="btn btn-outline-info">FadeToggle()</button>
-    <br>
-    <hr>
+        <!--Forma 1-->
+        <h1>Hide - Show - Toggle</h1>
+        <p id="p2">Esto es un parrafo 2</p>
+        <button id="btn2" class="btn btn-outline-info">Hide()</button>
+        <button id="btn3" class="btn btn-outline-info">Show()</button>
+        <button id="btn4" class="btn btn-outline-info">Toggle()</button>
+        <br>
+        <hr>
+        <!--Forma 2 -->
+        <h1>FadeIn - FadeOut - FadeToggle</h1>
+        <p id="p4">Esto es un parrafo 4</p>
+        <button id="btn8" class="btn btn-outline-info">FadeOut()</button>
+        <button id="btn9" class="btn btn-outline-info">FadeIn()</button>
+        <button id="btn10" class="btn btn-outline-info">FadeToggle()</button>
+        <br>
+        <hr>
+        <!--Manipulación-->
 
+        <h1>Esto es un elemento HTML1</h1>
+        <p id="p5">Esto es un parrafo 5</p>
+        <button id="btn11" class="btn btn-outline-info">After()</button>
+        <button id="btn12" class="btn btn-outline-info">Before()</button>
+        <button id="btn13" class="btn btn-outline-info">Append()</button>
+        <button id="btn14" class="btn btn-outline-info">Prepend()</button>
+        <br>
+        <hr>
 
+        <!--ATTR-->
+        <h1>Esto es un elemento HTML ATTR</h1>
+        <p id="p6">Esto es un parrafo 6</p>
+        <input type="text" id="txt1">
+        <button id="btn15" class="btn btn-outline-info">Attr()</button>
+        <br>
+        <hr>
+
+        <!--HTML-->
+        <h1>Esto es un elemento HTML2</h1>
+        <p id="p7">Esto es un parrafo 7</p>
+        <button id="btn16" class="btn btn-outline-info">HTML()</button>
+        <br>
+        <hr>
+
+        <!--VAL-->
+        <h1>Esto es un elemento HTML val</h1>
+        <p id="p8">Esto es un parrafo 8</p>
+        <input type="text" id="txt2" value="valor input txt2">
+        <button id="btn17" class="btn btn-outline-info">Val()</button>
+        <br>
+        <hr>
+
+        <!--Manipulación de estilos-->
+        <div id="div1">
+            <p>soy el primer parrafo</p>
+        </div>
+        <button id="btn18" class="btn btn-outline-info">CSS()</button>
+        <button id="btn19" class="btn btn-outline-info">AddClass()</button>
+        <button id="btn20" class="btn btn-outline-info">RemoveClass()</button>
+        <br>
+        <hr>
+
+    </div>
 </body>
 
 </html>
