@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script>
+        $(document).ready(function() {
+            $('#btnBuscar').click(function() {
+                let idAuto = $('#id').val();
+
+
+                $.get('http://localhost:9080/api/obtener/auto/', function(respuesta) {
+                    console.log(respuesta);
+                    let id = respuesta[idAuto - 1].id;
+                    let marca = respuesta[idAuto - 1].marca;
+                    let modelo = respuesta[idAuto - 1].modelo;
+                    let velocidad = respuesta[idAuto - 1].velocidad;
+                    let color = respuesta[idAuto - 1].color;
+                    console.log(id + marca + modelo + velocidad + color);
+                    $('.resultados').html('<h2>' + "ID: " + '</h2>' + id + '<br>' + '<h2>' + "Marca: " + '</h2>' + marca + '<h2>' + "Modelo: " + '</h2>' + "Velocidad: " + '<h2>' + velocidad + '</h2>' + '<h2>' + "Color: " + '</h2>' + color);
+
+                }, 'json');
+            });
+            /* $('#btnIngresar').click(function() {
+                let idAuto1 = $('').val();
+                $.get('http://localhost:9080/api/obtener/auto/', function(respuesta) {
+                    console.log(respuesta);
+                    let id = respuesta[idAuto1 - 1].id;
+                    let marca = respuesta[idAuto1 - 1].marca;
+                    let modelo = respuesta[idAuto1 - 1].modelo;
+                    let velocidad = respuesta[idAuto1 - 1].velocidad;
+                    let color = respuesta[idAuto1 - 1].color;
+                    console.log(id + marca + modelo + velocidad + color);
+                    $('.tabla').after('<td>' + id + '</td>' + '<td>' + marca + '</td>' + '<td>' + modelo + '</td>' + '<td>' + velocidad + '</td>' + '<td>' + color + '</td>');
+
+                }); */
+
+        });
+    </script>
+
+    <style>
+        .tabla {
+            width: 80%;
+            height: 100px;
+            background: linear-gradient(to top #AFEEEE, #40E0D0, #AFEEEE);
+            color: darksalmon;
+            font-size: 20px;
+        }
+        
+        .buscador {
+            width: 1000px;
+            height: 150px;
+        }
+        
+        .resultados {
+            background: linear-gradient(to bottom pink, white, pink);
+            width: 400px;
+            height: 400px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            border: solid salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <div class="buscador">
+            <h4>Ingresa la marca del auto</h4>
+            <input type="number" id="id" class="form-control">
+            <br>
+            <button id="btnBuscar" class="btn btn-outline-success">Buscar</button>
+        </div>
+        <br>
+        <div>
+            <h3>Resultado:</h3>
+        </div>
+        <div class="resultados">
+        </div>
+        <br>
+        <hr>
+        <div class="tabla">
+            <h1 class="fw-normal">Listado de automoviles</h1>
+            <button id="btnIngresar" class="btn btn-outline-success">Ingresar</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Velocidad</th>
+                        <th>color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
