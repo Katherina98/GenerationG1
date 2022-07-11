@@ -16,7 +16,7 @@
             $('#btnBuscar').click(function() {
                 let idAuto = $('#id').val();
                 $.get('http://localhost:9080/api/obtener/auto/', function(respuesta) {
-                    //Restar 1 al idAuto para cuadrar los ID de la API ya que parte en 0.
+                    //Restar 1 al idAuto para cuadrar los ID de la API. 
                     let id = respuesta[idAuto - 1].id;
                     let marca = respuesta[idAuto - 1].marca;
                     let modelo = respuesta[idAuto - 1].modelo;
@@ -30,21 +30,19 @@
             });
 
             $('#btnIngresar').click(function() {
-                for(let idAuto=0 ; idAuto<20 ; idAuto++){
-            
-                $.get('http://localhost:9080/api/obtener/auto', function(respuesta1) {
-                    console.log(respuesta1);
+                
+                forEach(element =>20 {
+                    $.get('http://localhost:9080/api/obtener/auto', function(respuesta1) {
                     let id = respuesta1[idAuto].id;
                     let marca = respuesta1[idAuto].marca;
                     let modelo = respuesta1[idAuto].modelo;
                     let velocidad = respuesta1[idAuto].velocidad;
                     let color = respuesta1[idAuto].color;
-                    $('#base').append('<tr>'+ '<th scope="row">'+(idAuto+1)+'</th>'+ '<td>' + id + '</td>'+'<td>' + marca + '</td>' + '<td>' + modelo + '</td>' + '<td>' + velocidad + '</td>' + '<td>' + color + '</td>' + '</tr>');
+                    $('#base').append('<tr>'+ '<th scope="row">'+(idAuto+1)+'</th>'+ '<td>' + marca + '</td>' + '<td>' + modelo + '</td>' + '<td>' + velocidad + '</td>' + '<td>' + color + '</td>' + '</tr>');
 
                 }, 'json');
             }
-            
-        });     
+    });     
     });
     </script>
 
@@ -92,8 +90,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Numero</th>
-                        <th scope="col">Id</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Marca</th>
                         <th scope="col">Modelo</th>
                         <th scope="col">Velocidad</th>
