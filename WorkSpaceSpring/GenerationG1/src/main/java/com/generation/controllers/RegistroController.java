@@ -54,15 +54,47 @@ public class RegistroController {
 		
 		System.out.println(usuario.getNombre()+" "+usuario.getApellido()+" "+usuario.getEdad()+" "+usuario.getPassword());
 		
-		//enviar el objeto al servicio
-		usuarioService.saveUsuario(usuario);
+		String variable= "";
+		//enviar el objeto al service
+		boolean usuarioCreado= usuarioService.saveUsuario(usuario);
 		
-		//obtener una lista de usuarios
-		List<Usuario> listaUsuarios= usuarioService.findAll();
-		//pasamos una lista de autos al jsp
-		model.addAttribute("usuariosTabla", listaUsuarios);
-			return "index.jsp";
+		if(usuarioCreado) {
+			model.addAttribute("msgError", "El email ya esta registrado");
+			return "registro.jsp";
+		}else {
+			return "login.jsp";
 		}
+	
 	}
+}
+	@RequestMapping("/usuario/ingreso")
+	public String ingresoUsuario(@RequestParam(value="email") String email,
+			@RequestParam(value="password") String password,
+			Model model) {
+		/**validaciones a realizar*/
+		//validar que los parametros no son null o vacios
+		if(email==null || password ==null ||  email.isEmpty() || password.isEmpty()) {
+			model.addAttribute("msgError", "Todos los campos son obligatorios");
+			return "login.jsp";
+		}
+		//si es true, indica que hay un error el bd
+		boolean usuarioValidado = usuarioService.validarUsuario(email,password);
+		
+		if(usuarioValidado){
+			model.addAttribute("msgError", "Error en el ingreso al sistema");
+			return "login.jsp";
+		}else {
+			//no hay error, puede ingresar al sistema
+			return "home.jsp";
+		}
+		
+	}
+	
+	@RequestMapping("/usuario/login")
+	public String login() {
+		return "login.jsp";
+	}
+
+	
 
 }

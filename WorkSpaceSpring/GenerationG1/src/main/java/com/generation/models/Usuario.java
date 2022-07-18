@@ -17,6 +17,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -38,10 +39,16 @@ public class Usuario {
 	
 	private int edad;
 	
+	private String email;
+	
 	@NotNull
-	@Size(min=6, max=8)
 	private String password;
 	
+	//Con esta anotacion indicamos que este atributo no sera guardado en la base de datos.
+	@Transient 
+	private String passwordConfirmacion;
+	
+
 	//Atributos opcionales que sirven para la gestión de la base de datos.
 	@Column(updatable=false)
 	private Date createdAt;
@@ -82,16 +89,17 @@ public class Usuario {
 		return licencia;
 	}
 
+	
+	public void setLicencia(Licencia licencia) {
+		this.licencia = licencia;
+	}
+	
 	public List<Rol> getRoles() {
 		return roles;
 	}
 
 	public void setRoles(List<Rol> roles) {
 		this.roles = roles;
-	}
-
-	public void setLicencia(Licencia licencia) {
-		this.licencia = licencia;
 	}
 	
 	public String getNombre() {
@@ -134,6 +142,21 @@ public class Usuario {
 		this.password = password;
 	}
 
+	public String getPasswordConfirmacion() {
+		return passwordConfirmacion;
+	}
+
+	public void setPasswordConfirmacion(String passwordConfirmacion) {
+		this.passwordConfirmacion = passwordConfirmacion;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	//Funciones
 	@Override
 	public String toString() {

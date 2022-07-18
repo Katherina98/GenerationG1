@@ -32,8 +32,14 @@
 			<form:label path="edad" class="form-label">Edad:</form:label>
 			<form:input type="number" path="edad" class="form-control"/>
 			<br>
+			<form:label path="email" class="form-label">Email:</form:label>
+			<form:input type="text" path="email" class="form-control"/>
+			<br>
 			<form:label path="password" class="form-label">Password:</form:label>
 			<form:input type="password" path="password" class="form-control"/>
+			<br>
+			<form:label path="passwordConfirmacion" class="form-label">Confirmar password:</form:label>
+			<form:input type="password" path="passwordConfirmacion" class="form-control"/>
 			<br>
 			<div class="form-check">
       			<input class="form-check-input" type="checkbox" id="gridCheck">

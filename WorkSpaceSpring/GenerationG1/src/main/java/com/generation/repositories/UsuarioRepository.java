@@ -12,4 +12,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	/**Querys y usar métodos que se conectan a la base de datos */
 	
 	
+	/*Validar la existencia del email*/
+
+	Usuario findByEmail(String email);
+	
 }

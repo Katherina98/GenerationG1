@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
-    <fullyQualifiedTypeName name="com.generation.repositories.UsuarioRepository"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="com.generation.repositories.AutoRepository"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="com.generation.services.ClienteService"/>
     <fullyQualifiedTypeName name="com.generation.models.EstadoVenta"/>
     <fullyQualifiedTypeName name="com.generation.services.EstadoVentaService"/>
+    <fullyQualifiedTypeName name="javax.persistence.Transient"/>
+    <fullyQualifiedTypeName name="org.mindrot.jbcrypt.BCrypt"/>
 </qualifiedTypeNameHistroy>

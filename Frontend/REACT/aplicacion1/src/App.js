@@ -1,20 +1,17 @@
 import React from 'react';
+import UsuarioComponent from './components/UsuarioComponent';
+//Importaciones. //
 
-//Creamos la función
+
+/**Creamos la función de App.
+ * Dentro del return declaramos el componente que sera ejecutado.
+ */
 const App = () => {
     return(
-    <div className="container mt-4">
-        <div className='row'>
-            <div className='col-8'>
-                <h1>Lista</h1>
-            </div>
-            <div className='col'>
-                <h1>Formulario</h1>
-            </div>
-        </div>
-    </div>
+        <UsuarioComponent/>
     );
 };
 
-//Exportamos para poder utilizar las funciones establecidas en todo el proyecto.
+
+//Declaramos la exportación del componente para poder utilizarlo en otro archivo del proyecto.//
 export default App;
